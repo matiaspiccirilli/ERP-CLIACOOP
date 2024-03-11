@@ -6,16 +6,16 @@ import {
   FaEllipsisV,
   FaArrowDown,
   FaArrowUp,
-  FaProcedures,
-  FaHospital,
-  FaBed,
-  FaSyringe,
   FaSyncAlt,
   FaSlidersH,
 } from 'react-icons/fa'
 import { FaUserMd } from 'react-icons/fa'
 import CircleChart from "../components/organism/circleChart/index"
 import { LineChart } from '../components/organism/lineChart/index'
+import { FaCow } from "react-icons/fa6"
+import { GiMilkCarton } from "react-icons/gi"
+import { GiFarmer } from "react-icons/gi"
+import { GiWindmill } from "react-icons/gi"
 
 export default function Home() {
   return (
@@ -76,7 +76,7 @@ export default function Home() {
                       <p className="text-sm text-gray-600">Total</p>
                     </div>
                     <div className="text-primary">
-                      <FaProcedures size={48} />
+                      <GiFarmer size={48} />
                     </div>
                   </div>
                   <div className="flex justify-between mt-2">
@@ -124,17 +124,17 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col sm:grid h-full items-center grid-cols-3 gap-4 ">
                     <div className="flex flex-col items-center text-center">
-                      <FaHospital size={48} className="text-primary" />
+                      <GiWindmill size={48} className="text-primary" />
                       <p className="text-xl font-bold">126</p>
                       <p className="text-sm text-gray-600">Total Establecimientos</p>
                     </div>
                     <div className="text-center flex flex-col items-center">
-                      <FaBed size={48} className="text-primary" />
+                      <FaCow size={48} className="text-primary" />
                       <p className="text-xl font-bold">836</p>
                       <p className="text-sm text-gray-600">Animales</p>
                     </div>
                     <div className="text-center flex flex-col items-center">
-                      <FaSyringe size={48} className=" text-primary" />
+                      <GiMilkCarton size={48} className=" text-primary" />
                       <p className="text-xl font-bold">120000</p>
                       <p className="text-sm text-gray-600">Nivel de Producción Estimado</p>
                     </div>

@@ -1,0 +1,94 @@
+/* ----------------------------- sidenav styles ----------------------------- */
+
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+    transition: all 0.5s;
+    border-right: 1px solid var(--color-secondary);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 2rem;
+    background-color: var(--bg-color-primary);
+  }
+  
+  .sidenav::-webkit-scrollbar {
+    background-color: var(--color-secondary);
+    width: 0.5em;
+  }
+  
+  .sidenav::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--bg-color-primary);
+  }
+  
+  /* ----------------------------- list container ----------------------------- */
+  
+  .list {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  
+  /* ---------------------------- behavior sidenav ---------------------------- */
+  
+  .visible {
+    width: 240px;
+    z-index: 900;
+    transition: all 0.3s;
+  }
+  .hidden {
+    width: 0px;
+    z-index: 900;
+    transition: all 0.3s;
+    animation-name: appear;
+    animation-duration: 0.3s;
+  }
+  
+  @keyframes appear {
+    from {
+      filter: brightness(1.1);
+    }
+    to {
+      filter: brightness(1);
+    }
+  }
+  
+  .title {
+    position: relative;
+    width: 100%;
+    padding: 0 0 0 68px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    margin-top: 8px;
+    line-height: 0;
+    color: var(--color-secondary);
+  }
+  
+  .buttonBar {
+    position: fixed;
+    top: 1rem;
+    right: 8px;
+    z-index: 999;
+  }
+  
+  @media (min-width: 1000px) {
+    .container {
+      min-width: 64px;
+    }
+  
+    .hidden {
+      width: 65px;
+    }
+  
+    .buttonBar {
+      left: 8px;
+      right: initial;
+    }
+  }
+  
