@@ -1,5 +1,5 @@
 //import React from 'react'
-import { Container } from "../components/container/index"
+import { Container } from "../../components/container/index"
 import {
   FaBell,
   FaEnvelope,
@@ -10,8 +10,8 @@ import {
   FaSlidersH,
 } from 'react-icons/fa'
 import { FaUserMd } from 'react-icons/fa'
-import CircleChart from "../components/organism/circleChart/index"
-import { LineChart } from '../components/organism/lineChart/index'
+import CircleChart from "../../components/organism/circleChart/index"
+import { LineChart } from '../../components/organism/lineChart/index'
 import { FaCow } from "react-icons/fa6"
 import { GiMilkCarton } from "react-icons/gi"
 import { GiFarmer } from "react-icons/gi"

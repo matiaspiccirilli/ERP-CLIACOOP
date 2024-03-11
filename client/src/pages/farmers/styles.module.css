@@ -1,0 +1,134 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    gap: 24px;
+    position: relative;
+    background-color: var(--color-secondary);
+    padding: 20px 0;
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .searchContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 2rem;
+  }
+  
+  .tools {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .buttonsContainer {
+    display: none;
+  }
+  
+  .searchContainer {
+    justify-content: flex-end;
+  }
+  
+  .primaryButton {
+    /* Primario/morado */
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    padding: 11px 28px;
+    border: none;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: var(--color-font-inverted);
+  }
+  
+  .secundaryButton {
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    padding: 11px 28px;
+    border: none;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: var(--color-primary);
+  }
+  
+  .tableContainer {
+    padding: 0 24px;
+  }
+  
+  /* ---------------------------------- table --------------------------------- */
+  
+  .table tr td:nth-child(1) span {
+    color: var(--color-font-base);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .table tr td:nth-child(3) span::before {
+    /* color: var(--color-primary-highlight); */
+    /* font-size: 16px; */
+    /* padding: 4px 12px;
+    background: #f0f6fe; */
+    /* border-radius: 10px; */
+    content: '';
+    display: inline-block;
+    padding: 5px;
+    border-radius: 2px;
+    width: 4px;
+    height: 4px;
+    margin-right: 4px;
+    font-weight: 500;
+  }
+  
+  .table tr td:nth-child(3) span[content='Active']::before {
+    background-color: var(--color-primary);
+  }
+  .table tr td:nth-child(3) span[content='Inactive']::before {
+    background-color: var(--color-tertiary);
+  }
+  
+  .table tr td:nth-child(5) span {
+    /* color: var(--color-primary-highlight); */
+    /* font-size: 16px; */
+    /* padding: 4px 12px;
+    background: #f0f6fe; */
+    /* border-radius: 10px; */
+    font-weight: 500;
+  }
+  .table tr td:last-child span {
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .table tr td:last-child span:hover {
+    color: var(--color-primary-highlight);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* ------------------------------- responsive ------------------------------- */
+  @media (min-width: 764px) {
+    .tableContainer {
+      padding: 0 64px;
+    }
+  
+    .searchContainer {
+      justify-content: space-between;
+      padding: 0 64px;
+    }
+  
+    .buttonsContainer {
+      display: flex;
+      gap: 10px;
+    }
+  }
+  

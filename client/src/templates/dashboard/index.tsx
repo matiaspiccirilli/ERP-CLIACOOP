@@ -25,8 +25,8 @@ const routes = {
     id: 'navBarlogout',
   },
   find: {
-    route: 'Patients',
-    ref: '/patients',
+    route: 'Farmers',
+    ref: '/farmers',
   },
   calendar: {
     route: 'Calendars',
