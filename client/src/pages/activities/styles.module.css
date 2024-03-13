@@ -3,7 +3,7 @@
     gap: 8px;
     flex-direction: column;
     font-family: var(--font-family-roboto);
-    width: 100%;
+    width: 1200px;/*100%*/
     min-height: 100vh;
   
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),

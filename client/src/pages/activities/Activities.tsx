@@ -14,7 +14,6 @@ const Activities = () => {
       <div className={styles.container}>
         <h3 className={styles.title}>Activities</h3>
         <div className={styles.categories}>
-            <p>Welcome to actividades!</p>
           <Reminder category="appointment" reminders={reminders} />
           <Reminder category="consultation" reminders={reminders} />
           <Reminder category="exam" reminders={reminders} />

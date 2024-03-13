@@ -2,7 +2,7 @@ import EventAPI from '../../services/Event'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { GetAppointment, GetKanban } from '../../Interfaces/reminder'
 import { ReminderState } from '../../Interfaces/state'
-import { REMINDER_STATE } from '../../../public/data/reminder-dummies'
+import { REMINDER_STATE } from '../../public/data/reminder-dummies'
 
 const reminder = REMINDER_STATE
 
