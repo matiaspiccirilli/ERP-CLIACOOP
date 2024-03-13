@@ -8,11 +8,13 @@ import Setting from './pages/settings/Settings'
 import Support from './pages/support/Support'
 import RootLayout from './pages/layout'
 import { Routes, Route } from 'react-router-dom'
+import {StoreProvider} from "./redux/StoreProvider"
 
 function App() {
 
   return (
     <>
+    <StoreProvider>
       <RootLayout> </RootLayout>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
@@ -23,6 +25,7 @@ function App() {
         <Route path="/settings" element={<Setting/>}></Route>
         <Route path="/support" element={<Support/>}></Route>
       </Routes>
+      </StoreProvider>
     </>
   )
 }

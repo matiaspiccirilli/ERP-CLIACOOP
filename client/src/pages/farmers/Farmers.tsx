@@ -5,17 +5,17 @@ import { Search } from '../../components/molecules/search'
 import { Paginate } from '../../components/molecules/pagination'
 import classNames from 'classnames'
 import styles from './styles.module.css'
-import { useSelector } from 'react-redux'
-//import { RootState, useAppDispatch } from '@/store/store'
-//import { Summary } from '@/interfaces/state'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState } from '../../redux/store'
+import { Summary } from '../../Interfaces/state'
 import { BsPerson } from 'react-icons/bs'
-//import { setSearch } from '@/store/slices/clinical.slice'
+import { setSearch } from '../../redux/slices/clinical.slice'
 import Container from '../../components/container/index'
-//import { CLINIC_HEADERS_DUMMIES } from '@/../public/data/patient-dummies'
+import { CLIENTS_HEADERS_DUMMIES } from '../../public/data/clients-dummies'
 
-// const transformClinicalPatient = (data: Summary[]) => {
-//   return data
-// }
+ const transformClinicalPatient = (data: Summary[]) => {
+   return data
+ }
 
 const getHead = (data: any) => {
   const head = []
@@ -26,54 +26,55 @@ const getHead = (data: any) => {
   return head
 }
 
-// const head = getHead(CLINIC_HEADERS_DUMMIES)
+ const head = getHead(CLIENTS_HEADERS_DUMMIES)
 
  const Farmers = () => {
-//   const dispatch = useAppDispatch()
 
-//   const clinicalRecords = useSelector((state: RootState) => state.clinical)
-//   const searchPatient = clinicalRecords.search
-//   const patientFiltered = transformClinicalPatient(
-//     clinicalRecords.filteredPatient,
-//   )
+  const dispatch = useDispatch()
 
-  const [patient, setPatient] = useState()
+   const clinicalRecords = useSelector((state: RootState) => state.clinical)
+   const searchPatient = clinicalRecords.search
+   const patientFiltered = transformClinicalPatient(
+    clinicalRecords.filteredPatient,
+    )
 
-  useEffect(() => {
-    //setPatient()
-  }, [])
+  const [patient, setPatient] = useState(patientFiltered)
+
+   useEffect(() => {
+     setPatient(patientFiltered)
+   }, [patientFiltered])
 
   return (
     <Container>
-      <div>
-        <div>
-          {/* <Search
+      <div className={classNames(styles.container)}>
+        <div className={styles.searchContainer}>
+          <Search
             placeholder="Search"
             value={searchPatient}
             onChange={(value) => {
               dispatch(setSearch(value))
             }}
-          /> */}
-          <div>
-            <button>
+          />
+          <div className={styles.buttonsContainer}>
+            <button className={styles.primaryButton}>
               <BsPerson /> &nbsp; Add Patient
             </button>
           </div>
         </div>
 
-        <div>
-          {/* <Table
+        <div className={styles.tableContainer}>
+          <Table
             headers={head}
             records={patient}
             href="/patients/"
             style={styles.table}
-          /> */}
+          />
         </div>
-        {/* <Paginate
+        <Paginate
           data={patientFiltered}
           setData={setPatient}
           itemsPerPage={10}
-        /> */}
+        />
       </div>
     </Container>
   )
