@@ -11,7 +11,7 @@ import { Summary } from '../../Interfaces/state'
 import { BsPerson } from 'react-icons/bs'
 import { setSearch } from '../../redux/slices/clinical.slice'
 import Container from '../../components/container/index'
-import { CLIENTS_HEADERS_DUMMIES } from '../../public/data/clients-dummies'
+import { CLIENTS_HEADERS_DUMMIES } from '../../../public/data/clients-dummies'
 
  const transformClinicalPatient = (data: Summary[]) => {
    return data

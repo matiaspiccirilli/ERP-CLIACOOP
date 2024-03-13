@@ -1,13 +1,13 @@
 'use client'
-//import React from 'react'
+import React from 'react'
 import { Container } from '../../components/container/index'
-//import { useSelector } from 'react-redux'
-//import { RootState } from '@/store/store'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 import styles from './styles.module.css'
-//import Reminder from '@/components/organisms/Reminder'
+import Reminder from '../../components/organism/reminder/index'
 
 const Activities = () => {
-  //const reminders = useSelector((state: RootState) => state.reminder.reminder)
+  const reminders = useSelector((state: RootState) => state.reminder.reminder)
 
   return (
     <Container>
@@ -15,10 +15,10 @@ const Activities = () => {
         <h3 className={styles.title}>Activities</h3>
         <div className={styles.categories}>
             <p>Welcome to actividades!</p>
-          {/* <Reminder category="appointment" reminders={reminders} />
+          <Reminder category="appointment" reminders={reminders} />
           <Reminder category="consultation" reminders={reminders} />
           <Reminder category="exam" reminders={reminders} />
-          <Reminder category="diagnosis" reminders={reminders} /> */}
+          <Reminder category="diagnosis" reminders={reminders} />
         </div>
       </div>
     </Container>
