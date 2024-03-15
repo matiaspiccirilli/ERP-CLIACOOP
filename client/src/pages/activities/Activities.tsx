@@ -12,7 +12,7 @@ const Activities = () => {
   return (
     <Container>
       <div className={styles.container}>
-        <h3 className={styles.title}>Activities</h3>
+        <h3 className={styles.title}>Actividades</h3>
         <div className={styles.categories}>
           <Reminder category="appointment" reminders={reminders} />
           <Reminder category="consultation" reminders={reminders} />

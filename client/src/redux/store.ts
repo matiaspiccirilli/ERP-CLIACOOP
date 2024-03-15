@@ -25,14 +25,14 @@ import {
   //import patient from './slices/patient.slice'
   //import consult from './slices/consult.slice'
   import clinical from './slices/clinical.slice'
-  //import calendar from './slices/calendar.slice'
+  import calendar from './slices/calendar.slice'
   import reminder from './slices/reminder.slice'
   
   export type RootState = {
     //user: ReturnType<typeof user>
     clinical: ReturnType<typeof clinical>
     //patient: ReturnType<typeof patient>
-    //calendar: ReturnType<typeof calendar>
+    calendar: ReturnType<typeof calendar>
     reminder: ReturnType<typeof reminder>
     //consult: ReturnType<typeof consult>
   }
@@ -50,7 +50,7 @@ import {
         //user,
         clinical,
         //patient,
-        //calendar,
+        calendar,
         reminder,
         //consult,
       }),

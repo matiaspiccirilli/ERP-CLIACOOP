@@ -1,90 +1,93 @@
 'use client'
-// import React from 'react'
-// import { DndProvider } from 'react-dnd'
-// import { HTML5Backend } from 'react-dnd-html5-backend'
-//import { useRef, useState } from 'react'
-//import styles from './styles.module.css'
-//import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
-// import {
-//   getNextMonth,
-//   getNextWeek,
-//   getPreviousMonth,
-//   getPreviousWeek,
-// } from '@/store/slices/calendar.slice'
-// import { RootState, useAppDispatch } from '@/store/store'
-//import { useSelector } from 'react-redux'
-//import dayjs from 'dayjs'
-//import 'dayjs/locale/es'
-// import NoSSR from '@/components/templates/NoSSR'
-// import { Button, Modal, Select, Title } from '@/components/atoms'
-// import { Dropdown } from '@/components/molecules'
-// import { Month, Weekly } from '@/components/organisms'
-// import Appointment from '@/components/organisms/Calendar/Appointment'
-// import MonthEvents from '@/components/organisms/Calendar/Month/MonthEvents'
-// import WeekEvents from '@/components/organisms/Calendar/Weekly/WeekEvents'
+ import React from 'react'
+ import { DndProvider } from 'react-dnd'
+ //import { HTML5Backend } from 'react-dnd-html5-backend'
+import { useRef, useState } from 'react'
+import styles from './styles.module.css'
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
+ import {
+   getNextMonth,
+   getNextWeek,
+   getPreviousMonth,
+   getPreviousWeek,
+ } from '../../redux/slices/calendar.slice'
+ import { RootState, useAppDispatch } from '../../redux/store'
+import { useSelector } from 'react-redux'
+import dayjs from 'dayjs'
+import 'dayjs/locale/es'
+ //import NoSSR from '@/components/templates/NoSSR' // next
+ import { Button} from "../../components/atoms/button"
+ import { Modal } from '../../components/atoms/modal'
+ import { Select } from '../../components/atoms/select'
+ import { Title } from '../../components/atoms/title'
+ import { Dropdown } from '../../components/molecules/dropDown/dropDown'
+ import { Month } from '../../components/organism/month'
+ import { Weekly } from '../../components/organism/weekly'
+ import Appointment from '../../components/organism/calendar/appointment/index'
+ import MonthEvents from '../../components/organism/calendar/month/monthEvents'
+ import WeekEvents from '../../components/organism/calendar/weekly/weekEvents'
 import Container from '../../components/container/index'
 
 const Calendars = () => {
   /* ---------------------------------- state --------------------------------- */
 
-//   const [view, setView] = useState<'week' | 'month' | string>('week')
+   const [view, setView] = useState<'week' | 'month' | string>('week')
 
-//   const dispatch = useAppDispatch()
+   const dispatch = useAppDispatch()
 
-//   const calendar = useSelector((state: RootState) => state.calendar)
+   const calendar = useSelector((state: RootState) => state.calendar)
 
-//   const currentDate = dayjs()
-//     .clone()
-//     .set('year', calendar.currentYear)
-//     .set('month', calendar.currentMonth)
-//     .locale('en')
-//     .format('MMMM YYYY')
+   const currentDate = dayjs()
+     .clone()
+     .set('year', calendar.currentYear)
+     .set('month', calendar.currentMonth)
+     .locale('en')
+     .format('MMMM YYYY')
 
-//   const indexWeek = calendar.week.weekIndex
+   const indexWeek = calendar.week.weekIndex
 
-//   const startWeek = dayjs()
-//     .year(calendar.currentYear)
-//     .week(indexWeek)
-//     .startOf('week')
-//     .format('DD/MM/YYYY')
-//   const endWeek = dayjs()
-//     .year(calendar.currentYear)
-//     .week(indexWeek)
-//     .endOf('week')
-//     .format('DD/MM/YYYY')
+   const startWeek = dayjs()
+     .year(calendar.currentYear)
+     .week(indexWeek)
+     .startOf('week')
+     .format('DD/MM/YYYY')
+   const endWeek = dayjs()
+     .year(calendar.currentYear)
+     .week(indexWeek)
+     .endOf('week')
+     .format('DD/MM/YYYY')
 
-//   const date =
-//     view === 'week' ? `Semana ${indexWeek} - ${currentDate}` : currentDate
+   const date =
+     view === 'week' ? `Semana ${indexWeek} - ${currentDate}` : currentDate
   /* --------------------------------- handler -------------------------------- */
 
-//   const handlePreviousTimer = () => {
-//     if (view === 'week') dispatch(getPreviousWeek())
-//     if (view === 'month') dispatch(getPreviousMonth())
-//   }
-//   const handleNextTimer = () => {
-//     if (view === 'week') dispatch(getNextWeek())
-//     if (view === 'month') dispatch(getNextMonth())
-//   }
+   const handlePreviousTimer = () => {
+     if (view === 'week') dispatch(getPreviousWeek())
+     if (view === 'month') dispatch(getPreviousMonth())
+   }
+   const handleNextTimer = () => {
+     if (view === 'week') dispatch(getNextWeek())
+     if (view === 'month') dispatch(getNextMonth())
+   }
 
   /* -------------------------- handler Modal Records ------------------------- */
-//   const modalRef = useRef<HTMLElement | null>(null)
+   const modalRef = useRef<HTMLElement | null>(null)
 
-//   const openModal = () => {
-//     if (modalRef?.current) modalRef.current.style.display = 'flex'
-//   }
-//   const closeModal = (event: any) => {
-//     event.preventDefault()
-//     if (modalRef?.current) modalRef.current.style.display = 'none'
-//   }
+   const openModal = () => {
+     if (modalRef?.current) modalRef.current.style.display = 'flex'
+   }
+   const closeModal = (event: any) => {
+     event.preventDefault()
+     if (modalRef?.current) modalRef.current.style.display = 'none'
+   }
 
   /* ----------------------------------- jsx ---------------------------------- */
 
   return (<div>
-    {/*  <DndProvider backend={HTML5Backend}> */}
-      <Container> <p>Calendario!
-      </p>
-        {/* <div className={styles.container}>
-          <NoSSR>
+      {/* <DndProvider backend={HTML5Backend}>  */}
+      <Container> 
+        <div className={styles.container}>
+          {/* <NoSSR>
             <Modal
               position="right"
               onClose={(event) => closeModal(event)}
@@ -92,7 +95,7 @@ const Calendars = () => {
             >
               <Appointment />
             </Modal>
-          </NoSSR>
+          </NoSSR> */}
           <div className={styles.navigation}>
             <Title color="primary">{date}</Title>
             <div className={styles.actions}>
@@ -165,9 +168,9 @@ const Calendars = () => {
               />
             )}
           </div>
-        </div> */}
+        </div> 
       </Container>
-    {/* </DndProvider> */}
+     {/* </DndProvider> */}
     </div>)
 }
 
