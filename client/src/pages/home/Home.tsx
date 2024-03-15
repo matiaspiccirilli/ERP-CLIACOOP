@@ -29,7 +29,7 @@ export default function Home() {
                 <div className="w-1/2 ">
                   <input
                     className="p-2 border rounded w-full"
-                    placeholder="Search here..."
+                    placeholder="Buscar Patrón..."
                     type="text"
                   />
                 </div>

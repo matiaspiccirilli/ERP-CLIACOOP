@@ -1,5 +1,6 @@
 import './App.css'
 import Home from './pages/home/Home'
+import HeaderImage from './components/headerImage/Header'
 import Doctors from "./pages/doctors/Doctor"
 import Farmers from './pages/farmers/Farmers'
 import Activities from "./pages/activities/Activities"
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <>
+    <HeaderImage/>
     <StoreProvider>
       <RootLayout> </RootLayout>
       <Routes>
